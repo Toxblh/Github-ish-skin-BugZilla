@@ -1842,3 +1842,8 @@ table.bz_buglist td {
 	border: none;
 	vertical-align: top;
 }
+
+.component-label {
+	background-color: #ffcb08;
+	color: #1f2328;
+}
