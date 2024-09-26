@@ -1478,6 +1478,7 @@ input[type='radio'] {
 
 #attachment_table td {
 	border: 1px solid var(--borderColor-default);
+	color: var(--fgColor-muted);
 }
 
 .bz_attach_footer {
