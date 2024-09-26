@@ -9,7 +9,7 @@
 ## Установка расширения с Tampermonkey:
 
 1. Установите расширение **[Tampermonkey](https://www.tampermonkey.net/)** (Альтернатива для Safari: **[UserScripts](https://apps.apple.com/app/userscripts/id1463298887)**)
-2. **[«Установите Скрипт»](https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/tampermonkey.js)**
+2. **[«Установите Скрипт»](https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/altbugzilla.user.js)**
 
 ### Установка расширения с User JavaScript and CSS Extension:
 
@@ -35,7 +35,7 @@ This project provides a modernized visual update for Alt Bugzilla.
 ## Installing the extension with Tampermonkey:
 
 1. Install the extension **[Tampermonkey](https://www.tampermonkey.net/)** (An alternative for Safari: **[UserScripts](https://apps.apple.com/app/userscripts/id1463298887)**)
-2. **[«Install the Script»](https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/tampermonkey.js)**
+2. **[«Install the Script»](https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/altbugzilla.user.js)**
 
 ### Installation the extension with User JavaScript and CSS:
 
