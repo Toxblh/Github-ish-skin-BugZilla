@@ -1,0 +1,935 @@
+/* Set global font and background */
+body,
+td,
+th,
+input,
+dt,
+#titles {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+		Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+	font-size: small;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+		Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+	font-size: 13px;
+	background-color: #fff;
+	color: #24292e;
+	line-height: 1.4;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+}
+
+/* Center content */
+#bugzilla-body {
+	flex: 1 0 auto;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 12px;
+	background: white;
+	border: none;
+	color: #24292e;
+}
+
+/* Style headers */
+header,
+.header,
+#header {
+	background-color: #24292e;
+	color: #ffffff;
+	padding: 12px;
+}
+
+/* Style links */
+a {
+	color: #0020b1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* Style buttons */
+button,
+input[type='submit'],
+input[type='button'],
+.button {
+	background-color: #2da44e;
+	border: 1px solid rgba(27, 31, 35, 0.15);
+	border-radius: 6px;
+	color: #ffffff;
+	padding: 4px 8px;
+	font-size: 13px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+	margin-bottom: 10px;
+}
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover,
+.button:hover {
+	background-color: #2c974b;
+}
+
+/* Style input fields */
+input[type='text'],
+input[type='password'],
+textarea,
+select,
+.text_input {
+	background-color: #ffffff;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+	padding: 4px 8px;
+	font-size: 13px;
+	color: #24292e;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+}
+input[type='text']:focus,
+input[type='password']:focus,
+textarea:focus,
+select:focus {
+	border-color: #0969da;
+	outline: none;
+}
+
+/* Style tables */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #ffffff;
+}
+th,
+td {
+	padding: 2px 5px;
+	// border: 1px solid #e9e9e9
+}
+th {
+	background-color: #f6f8fa;
+	color: #24292e;
+	text-align: left;
+}
+
+/* Style navigation menus */
+nav,
+.nav,
+#nav {
+	background-color: #ffffff;
+	border-bottom: 1px solid #d0d7de;
+}
+nav a,
+.nav a,
+#nav a {
+	color: #24292e;
+	padding: 6px 12px;
+	display: inline-block;
+	transition:
+		background-color 0.2s,
+		color 0.2s;
+}
+nav a:hover,
+.nav a:hover,
+#nav a:hover {
+	background-color: #f6f8fa;
+}
+
+/* Style issue lists */
+.bz_buglist {
+	background-color: #ffffff;
+}
+.bz_bugitem {
+	border-bottom: 1px solid #d0d7de;
+}
+.bz_bugitem:hover {
+	background-color: #f6f8fa;
+}
+
+/* Style footer */
+footer,
+.footer,
+#footer {
+	background-color: #f6f8fa;
+	color: #57606a;
+	padding: 12px;
+	text-align: center;
+}
+
+/* Style headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #24292e;
+	font-weight: 600;
+}
+
+/* Style code blocks */
+pre,
+code,
+.ih_history_change {
+	padding: 12px;
+	font-family: monospace;
+	overflow: auto;
+	margin: 0;
+}
+
+/* Style notifications and messages */
+.notification,
+.message,
+.error {
+	background-color: #ffebe9;
+	border: 1px solid #d0d7de;
+	color: #24292e;
+	padding: 8px;
+	border-radius: 6px;
+	margin-bottom: 12px;
+}
+
+/* Style forms */
+form {
+	background-color: #ffffff;
+	margin-bottom: 12px;
+}
+
+/* Style breadcrumbs */
+.breadcrumbs {
+	background-color: #ffffff;
+	padding: 6px 12px;
+	border-bottom: 1px solid #d0d7de;
+}
+.breadcrumbs a {
+	color: #57606a;
+}
+.breadcrumbs a:hover {
+	color: #24292e;
+}
+
+/* Style sidebar */
+.sidebar {
+	background-color: #f6f8fa;
+	padding: 12px;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+}
+
+/* Style tabs */
+.tabs {
+	border-bottom: 1px solid #d0d7de;
+}
+.tabs a {
+	color: #57606a;
+	padding: 6px 12px;
+	display: inline-block;
+	border-top: 3px solid transparent;
+	transition:
+		background-color 0.2s,
+		color 0.2s;
+}
+.tabs a.active {
+	color: #24292e;
+	border-top-color: #f78166;
+}
+.tabs a:hover {
+	background-color: #f6f8fa;
+}
+
+/* Style progress bars */
+.progress-bar {
+	background-color: #d0d7de;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.progress-bar > div {
+	background-color: #2da44e;
+	height: 10px;
+}
+
+/* Adjust comments */
+.bz_comment {
+	background-color: #ffffff;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+	padding: 0;
+	margin-bottom: 12px;
+	position: relative;
+	word-wrap: break-word;
+	max-width: 1000px;
+}
+
+/* Style comment headers */
+.bz_comment_header {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+/* Style comment text */
+.bz_comment_text {
+	padding: 1rem;
+	font-size: 13px;
+	line-height: 1.4;
+	width: 95%;
+}
+
+/* Additional modern enhancements */
+/* Use subtle shadows for depth */
+.box,
+.panel,
+.card {
+	background-color: #ffffff;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+	box-shadow: 0 1px 3px rgba(27, 31, 35, 0.12);
+	padding: 12px;
+}
+
+/* Improve form element appearance */
+input[type='checkbox'],
+input[type='radio'] {
+	width: 16px;
+	height: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	#bugzilla-body {
+		padding: 8px;
+	}
+	nav a,
+	.nav a,
+	#nav a {
+		padding: 8px;
+	}
+	.tabs a {
+		padding: 8px;
+	}
+}
+
+/* Use system colors for better accessibility */
+:root {
+	color-scheme: light dark;
+}
+
+#status {
+	margin-bottom: 0;
+}
+
+#attachment_table th {
+	background-color: #f6f8fa;
+	border: 1px solid #d0d7de;
+}
+
+#attachment_table td {
+	border: 1px solid #d0d7de;
+}
+
+.bz_attach_footer {
+	background-color: white;
+}
+
+.bz_short_desc_container {
+	background: #fff;
+}
+
+#header {
+	background: #fff;
+	flex: 1 0 auto;
+	min-width: 1000px;
+	margin: 0 auto;
+	padding: 0 12px;
+	border: none;
+	color: #24292e;
+}
+
+#header .links {
+	background: #f6f8fa;
+	border: 1px solid #d0d7de;
+	padding: 10px 10px 0px 10px;
+}
+
+#header .links,
+#header a,
+#footer a {
+	color: black;
+}
+
+#titles {
+	background: black;
+}
+
+#titles a {
+	color: white;
+}
+
+#common_links form {
+	background-color: transparent;
+	border: none;
+	border-radius: 6px;
+	padding: 0;
+	margin-bottom: 12px;
+}
+
+#comments td {
+	padding-top: 2px;
+	border: none;
+}
+
+#bz_big_form_parts > tbody > tr > td,
+.edit_form > tbody > tr > td {
+	border: none;
+}
+
+#add_comment td:first-child {
+	border: none;
+	padding: 0;
+}
+
+.comment_tab {
+	display: inline-flex;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.active_comment_tab {
+	background: #fff;
+}
+
+#comment_tabs {
+	margin-left: 20px;
+	margin-bottom: -1px;
+}
+
+#comment_preview {
+	background-color: #ffffff;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+	padding: 4px 8px;
+	font-size: 13px;
+	color: #24292e;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.bz_comment.ih_history {
+	padding: 0;
+}
+
+.ih_history .bz_comment_head {
+	padding: 8px;
+}
+
+.ih_inlinehistory {
+	padding: 0 1rem 1rem 1rem;
+}
+
+.bz_comment_table {
+	position: relative;
+}
+
+.bz_comment_table:before {
+	background-color: #d1d9e0;
+	bottom: 40px;
+	content: '';
+	display: block;
+	left: 31px;
+	position: absolute;
+	top: 10px;
+	width: 2px;
+}
+
+#footer {
+	display: none;
+}
+
+.links > span {
+	float: none;
+	display: inline-flex;
+}
+
+.links > span > li:nth-child(4),
+.links > span > li:nth-child(5) {
+	display: none;
+}
+
+ul.links .separator {
+	display: none;
+}
+
+ul.links li {
+	margin-right: 10px;
+}
+
+#comments:before {
+	content: '';
+	display: block;
+	border-top: 2px dashed #969696;
+	margin-top: 20px;
+	padding: 10px 20px;
+	font-size: 19px;
+	font-weight: 600;
+}
+
+.bz_comment_user .email {
+	color: black;
+	text-decoration: none;
+	line-height: 1.5;
+	margin-left: 8px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.bz_comment_time {
+	font-size: 14px;
+	font-weight: 400;
+	color: #59636e;
+	margin: 0 0.5em 0 0;
+}
+
+.bz_comment_actions a,
+.bz_comment_number a {
+	color: #59636e;
+}
+
+.bz_comment_head,
+.bz_first_comment_head {
+	padding: 8px;
+	background-color: #f6f8fa;
+	border-bottom: 1px solid #d0d7de;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.bz_section_spacer {
+	display: none;
+}
+
+.bz_avatar {
+	box-shadow: 0 0 0 1px #1f232826;
+	position: absolute;
+	left: -60px;
+	top: -2px;
+	border-radius: 50%;
+	height: 40px;
+}
+
+.bz_first_comment_head:after,
+.bz_comment_head:after {
+	margin-left: 3px;
+	background-image: linear-gradient(#f6f8fa, #f6f8fa);
+	position: absolute;
+	top: 11px;
+	left: -10px;
+	display: block;
+	width: 8px;
+	height: 16px;
+	pointer-events: none;
+	content: ' ';
+	clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.bz_first_comment_head:before,
+.bz_comment_head:before {
+	background-color: #d1d9e0;
+	position: absolute;
+	top: 11px;
+	left: -8px;
+	display: block;
+	width: 8px;
+	height: 16px;
+	pointer-events: none;
+	content: ' ';
+	clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.bz_comment_actions,
+.bz_comment_number,
+.bz_private_checkbox {
+	font-size: 14px;
+	font-weight: 400;
+	color: #59636e;
+}
+
+.bz_short_desc_container {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #d0d7de;
+	border-radius: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	body,
+	td,
+	th,
+	input,
+	dt,
+	#titles {
+		background-color: #0d1117; /* Основной тёмный фон */
+		color: #c9d1d9; /* Основной цвет текста */
+	}
+
+	body {
+		background-color: #0d1117; /* Фон страницы */
+		color: #c9d1d9; /* Основной цвет текста */
+	}
+
+	#bugzilla-body {
+		background-color: #212830; /* Фон контейнера */
+		color: #c9d1d9; /* Цвет текста */
+	}
+
+	header,
+	.header,
+	#header {
+		background-color: #212830; /* Фон заголовков */
+		color: #c9d1d9; /* Цвет текста в заголовках */
+	}
+
+	a {
+		color: #58a6ff; /* Цвет ссылок */
+	}
+	a:hover {
+		color: #1f6feb; /* Цвет ссылок при наведении */
+	}
+
+	button,
+	input[type='submit'],
+	input[type='button'],
+	.button {
+		background-color: #238636; /* Фон кнопок */
+		border: 1px solid #30363d; /* Граница кнопок */
+		color: #ffffff; /* Цвет текста на кнопках */
+	}
+	button:hover,
+	input[type='submit']:hover,
+	input[type='button']:hover,
+	.button:hover {
+		background-color: #2ea043; /* Фон кнопок при наведении */
+	}
+
+	input[type='text'],
+	input[type='password'],
+	textarea,
+	select,
+	.text_input {
+		background-color: #0d1117; /* Фон полей ввода */
+		border: 1px solid #30363d; /* Граница полей */
+		color: #c9d1d9; /* Цвет текста в полях */
+	}
+	input[type='text']:focus,
+	input[type='password']:focus,
+	textarea:focus,
+	select:focus {
+		border-color: #58a6ff; /* Цвет границы при фокусе */
+	}
+
+	table {
+		background-color: #0d1117; /* Фон таблиц */
+	}
+	th,
+	td {
+		background-color: #212830; /* Фон ячеек таблиц */
+		color: #c9d1d9; /* Цвет текста в таблицах */
+	}
+	th {
+		background-color: #21262d; /* Фон заголовков таблиц */
+		color: #c9d1d9; /* Цвет текста в заголовках */
+	}
+
+	nav,
+	.nav,
+	#nav {
+		background-color: #0d1117; /* Фон навигации */
+		border-bottom: 1px solid #30363d; /* Граница навигации */
+	}
+	nav a,
+	.nav a,
+	#nav a {
+		color: #c9d1d9; /* Цвет ссылок в навигации */
+	}
+	nav a:hover,
+	.nav a:hover,
+	#nav a:hover {
+		background-color: #21262d; /* Фон ссылок при наведении */
+	}
+
+	.bz_buglist {
+		background-color: #0d1117; /* Фон списка ошибок */
+	}
+	.bz_bugitem {
+		border-bottom: 1px solid #30363d; /* Граница элементов списка ошибок */
+	}
+	.bz_bugitem:hover {
+		background-color: #212830; /* Фон элемента списка при наведении */
+	}
+
+	footer,
+	.footer,
+	#footer {
+		background-color: #212830; /* Фон подвала */
+		color: #8b949e; /* Цвет текста в подвале */
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: #c9d1d9; /* Цвет заголовков */
+	}
+
+	pre,
+	code,
+	.ih_history_change {
+		background-color: #212830; /* Фон блоков кода */
+		color: #c9d1d9; /* Цвет текста в блоках кода */
+	}
+
+	.notification,
+	.message,
+	.error {
+		background-color: #da3633; /* Фон уведомлений и ошибок */
+		color: #ffffff; /* Цвет текста в уведомлениях */
+	}
+
+	form {
+		background-color: #0d1117; /* Фон форм */
+	}
+
+	.breadcrumbs {
+		background-color: #0d1117; /* Фон хлебных крошек */
+		border-bottom: 1px solid #30363d; /* Граница хлебных крошек */
+	}
+	.breadcrumbs a {
+		color: #8b949e; /* Цвет ссылок в хлебных крошках */
+	}
+	.breadcrumbs a:hover {
+		color: #c9d1d9; /* Цвет ссылок при наведении */
+	}
+
+	.sidebar {
+		background-color: #212830; /* Фон боковой панели */
+		border: 1px solid #30363d; /* Граница боковой панели */
+	}
+
+	.tabs {
+		border-bottom: 1px solid #30363d; /* Граница вкладок */
+	}
+	.tabs a {
+		color: #8b949e; /* Цвет ссылок на вкладках */
+	}
+	.tabs a.active {
+		color: #c9d1d9; /* Цвет активных вкладок */
+		border-top-color: #da3633; /* Цвет верхней границы активной вкладки */
+	}
+
+	.progress-bar {
+		background-color: #21262d; /* Фон прогресс-бара */
+	}
+	.progress-bar > div {
+		background-color: #2ea043; /* Заполнение прогресс-бара */
+	}
+
+	.bz_comment {
+		background-color: #212830; /* Фон комментариев */
+		border: 1px solid #30363d; /* Граница комментариев */
+	}
+
+	.bz_comment_header {
+		background-color: #21262d; /* Фон заголовка комментария */
+		color: #c9d1d9; /* Цвет текста в заголовке */
+	}
+
+	.bz_comment_text {
+		color: #c9d1d9; /* Цвет текста комментариев */
+	}
+
+	/* Дополнительные стили, соответствующие цветам тёмной темы */
+	.box,
+	.panel,
+	.card {
+		background-color: #212830; /* Фон панелей и карточек */
+		border: 1px solid #30363d; /* Граница */
+		box-shadow: 0 1px 3px rgba(1, 4, 9, 0.12); /* Лёгкая тень */
+	}
+
+	.bz_short_desc_container {
+		background-color: #212830; /* Фон контейнера с коротким описанием */
+		border: 1px solid #30363d; /* Граница контейнера */
+	}
+
+	.bz_first_comment_head:after,
+	.bz_comment_head:after {
+		background-image: linear-gradient(
+			#212830,
+			#212830
+		); /* Изменение на цвет тёмной темы */
+	}
+
+	.bz_first_comment_head:before,
+	.bz_comment_head:before {
+		background-color: #30363d; /* Цвет для тёмной темы */
+	}
+
+	.bz_comment_head,
+	.bz_first_comment_head {
+		background-color: #212830; /* Фон для тёмной темы */
+		border-bottom: 1px solid #30363d; /* Граница для тёмной темы */
+	}
+	
+	.bz_comment_user .email {
+		color: #d1d7e0;
+	}
+	
+	#header .links, #header a, #footer a {
+    color: #ffffff;
+    background: #212830;
+	}
+}
+
+
+// --------
+/* Стили таблицы */
+table.bz_buglist.gh-issues-listing {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* Стили заголовка */
+tr.gh-table-header {
+    background-color: #f6f8fa;
+}
+
+tr.gh-table-header th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #e1e4e8;
+    font-weight: bold;
+    color: #24292e;
+}
+
+/* Стили строк */
+table.bz_buglist tr.gh-issue-row {
+    border-bottom: 1px solid #e1e4e8;
+}
+
+table.bz_buglist tr.gh-issue-row:hover {
+    background-color: #f6f8fa;
+}
+
+/* Ячейка задачи */
+.gh-issue-cell {
+    padding: 16px;
+}
+
+/* Контейнер задачи */
+.gh-issue-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Первая строка */
+.gh-issue-first-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Вторая строка */
+.gh-issue-second-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #586069;
+    font-size: 12px;
+    margin-left: 25px;
+}
+
+/* Левая и правая части */
+.gh-issue-left {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.gh-issue-right {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Ссылка на задачу */
+a.gh-issue-link {
+    font-weight: 600;
+    color: #24292e;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a.gh-issue-link:hover {
+    text-decoration: underline;
+}
+
+/* Теги */
+.gh-labels {
+    margin-top: 4px;
+    margin-left: 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gh-label {
+    display: inline-block;
+    background-color: #d1d5da;
+    color: #24292e;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+.severity-label {
+    color: #ffffff;
+}
+
+/* Цвет для компонента */
+.component-label {
+    background-color: #ffcb08;
+}
+
+/* Исполнитель */
+.gh-assignee {
+    font-size: 14px;
+    color: #586069;
+}
+
+/* ID задачи и время */
+.gh-issue-id {
+    font-weight: 600;
+}
+
+.gh-time-ago {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/* Статус иконка */
+.gh-status-icon {
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+/* Корректировка для структуры таблицы */
+table.bz_buglist td {
+    border: none;
+    vertical-align: top;
+}
