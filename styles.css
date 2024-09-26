@@ -1425,6 +1425,7 @@ form {
 	line-height: 1.4;
 	width: 95%;
 	color: var(--fgColor-default);
+	background-color: transparent;
 }
 
 /* Additional modern enhancements */
