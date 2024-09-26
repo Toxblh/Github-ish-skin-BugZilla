@@ -1232,7 +1232,7 @@ select,
 	border-radius: 6px;
 	padding: 4px 8px;
 	font-size: 13px;
-	color: var(--control-fgColor-rest);
+	color: var(--control-fgColor-rest)!important;
 	width: 100%;
 	box-sizing: border-box;
 	margin-bottom: 5px;
@@ -1317,7 +1317,7 @@ h6 {
 	font-weight: 600;
 }
 
-/* Style code blocks */
+/* Style code blocks */text_input
 pre,
 code,
 .ih_history_change {
@@ -1325,7 +1325,6 @@ code,
 	font-family: monospace;
 	overflow: auto;
 	margin: 0;
-	background-color: var(--bgColor-inset);
 	color: var(--fgColor-default);
 }
 
@@ -1474,6 +1473,7 @@ input[type='radio'] {
 #attachment_table th {
 	background-color: var(--bgColor-muted);
 	border: 1px solid var(--borderColor-default);
+  color: var(--fgColor-default);
 }
 
 #attachment_table td {
