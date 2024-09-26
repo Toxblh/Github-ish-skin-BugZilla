@@ -16,8 +16,8 @@ This project provides a modernized visual update for Alt Bugzilla.
    - Enable the module in the top right corner.
 
 3. Add the following resources:
-   - CSS: [Custom CSS Gist](https://gist.github.com/Toxblh/32ec11cf9e3a051f56189e22499ae4bd)
-   - JavaScript: [Custom JS Gist](https://gist.github.com/Toxblh/d89bb4cf58e3fe4cc9e9b5948b7963dd)
+   - CSS: [Custom CSS](styles.css)
+   - JavaScript: [Custom JS](script.js)
 
 ---
 
@@ -29,7 +29,7 @@ This project provides a modernized visual update for Alt Bugzilla.
 ### Установка
 
 1. Установите расширение **User JavaScript and CSS** для Chrome:  
-   [User JavaScript and CSS Extension](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld?hl=en)
+   [User JavaScript and CSS Extension](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld?hl=ru)
 
 2. В расширении:
    - Добавьте следующий модуль:  
@@ -37,5 +37,5 @@ This project provides a modernized visual update for Alt Bugzilla.
    - Включите модуль в правом верхнем углу.
 
 3. Добавьте следующие ресурсы:
-   - CSS: [Custom CSS Gist](https://gist.github.com/Toxblh/32ec11cf9e3a051f56189e22499ae4bd)
-   - JavaScript: [Custom JS Gist](https://gist.github.com/Toxblh/d89bb4cf58e3fe4cc9e9b5948b7963dd)
+   - CSS: [Custom CSS](styles.css)
+   - JavaScript: [Custom JS](script.js)
