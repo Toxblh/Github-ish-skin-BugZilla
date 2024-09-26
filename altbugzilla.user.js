@@ -9,12 +9,12 @@
 // @require        https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/script.js
 // @match          https://bugzilla.altlinux.org/*
 // @namespace      altbugzilla
-// @version        1.0.0
+// @version        1.0.1
 // @icon           https://bugzilla.altlinux.org/images/favicon.svg
 // @author         Toxblh
 // @homepageURL    https://github.com/Toxblh/Github-ish-skin-BugZilla
-// @updateURL      https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/tampermonkey.js
-// @downloadURL    https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/tampermonkey.js
+// @updateURL      https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/altbugzilla.user.js
+// @downloadURL    https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/altbugzilla.user.js
 // @supportURL     https://github.com/Toxblh/Github-ish-skin-BugZilla/issues
 // ==/UserScript==
 
