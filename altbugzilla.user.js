@@ -10,8 +10,9 @@
 // @require        https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/script.js
 // @match          https://bugzilla.altlinux.org/*
 // @match          https://bugzilla.altlinux.com/*
+// @match          https://bugzilla.altlinux.ru/*
 // @namespace      altbugzilla
-// @version        1.0.5
+// @version        1.0.6
 // @icon           https://bugzilla.altlinux.org/images/favicon.svg
 // @author         Toxblh
 // @homepageURL    https://github.com/Toxblh/Github-ish-skin-BugZilla
