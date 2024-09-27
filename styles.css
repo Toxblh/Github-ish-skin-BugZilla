@@ -1183,7 +1183,6 @@ body {
 
 /* Style headers */
 header,
-.header,
 #header {
 	background-color: var(--bgColor-emphasis);
 	color: var(--fgColor-onEmphasis);
