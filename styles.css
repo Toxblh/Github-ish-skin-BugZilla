@@ -1871,3 +1871,7 @@ table.bz_buglist td {
 	background-color: #ffcb08;
 	color: #1f2328;
 }
+
+#page-index #logo {
+	display: none;
+}
