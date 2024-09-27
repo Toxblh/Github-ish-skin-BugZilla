@@ -9,6 +9,7 @@
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
 // @require        https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/script.js
 // @match          https://bugzilla.altlinux.org/*
+// @match          https://bugzilla.altlinux.com/*
 // @namespace      altbugzilla
 // @version        1.0.4
 // @icon           https://bugzilla.altlinux.org/images/favicon.svg
