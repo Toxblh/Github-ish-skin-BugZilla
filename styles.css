@@ -1568,6 +1568,10 @@ input[type='radio'] {
 	box-sizing: border-box;
 }
 
+.ih_history_item {
+	position: relative;
+}
+
 .bz_comment.ih_history {
 	padding: 0;
 }
