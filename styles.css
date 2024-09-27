@@ -1586,6 +1586,8 @@ input[type='radio'] {
 
 .bz_comment_table {
 	position: relative;
+	margin-left: 40px;
+   	width: calc(100% - 40px);
 }
 
 .bz_comment_table:before {
