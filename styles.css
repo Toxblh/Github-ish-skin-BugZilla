@@ -1232,7 +1232,7 @@ select,
 	border-radius: 6px;
 	padding: 4px 8px;
 	font-size: 13px;
-	color: var(--control-fgColor-rest)!important;
+	color: var(--control-fgColor-rest) !important;
 	width: 100%;
 	box-sizing: border-box;
 	margin-bottom: 5px;
@@ -1473,7 +1473,7 @@ input[type='radio'] {
 #attachment_table th {
 	background-color: var(--bgColor-muted);
 	border: 1px solid var(--borderColor-default);
-  color: var(--fgColor-default);
+	color: var(--fgColor-default);
 }
 
 #attachment_table td {
@@ -1672,6 +1672,23 @@ ul.links li {
 	top: -2px;
 	border-radius: 50%;
 	height: 40px;
+}
+
+#bz_assignee_edit_container > span:first-child,
+#bz_qa_contact_edit_container > span:first-child {
+	display: inline-flex;
+	align-items: center;
+}
+
+.bz_show_bug_column .bz_avatar {
+	position: inherit !important;
+	height: 18px !important;
+}
+
+.bz_show_bug_column .vcard {
+	display: inline-flex;
+	gap: 5px;
+	margin-right: 5px;
 }
 
 .bz_first_comment_head:after,
