@@ -1,9 +1,15 @@
 // Select all elements that contain the "mailto:" email link
-const emailLinks = document.querySelectorAll('a.email[href^="mailto:"]');
+let emailLinks = document.querySelectorAll('a.email[href^="mailto:"]');
+
+if (!emailLinks.length) {
+    console.log('Email links not found.');
+    emailLinks = document.querySelectorAll('.vcard .fn');
+}
 
 emailLinks.forEach(link => {
-    // Extract the email address from the "mailto:" href attribute
-    const email = link.getAttribute('href').replace('mailto:', '').trim();
+    // Extract the email address from the "mailto:" href attribute or the name
+    const linkHref = link.getAttribute('href');
+    const email = linkHref ? linkHref.replace('mailto:', '').trim() : link.textContent.trim();
 
     // Use CryptoJS to generate MD5 hash of the email (Gravatar uses lowercased MD5 hash of the email)
     const emailHash = CryptoJS.MD5(email.toLowerCase()).toString();

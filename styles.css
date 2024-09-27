@@ -1604,8 +1604,8 @@ input[type='radio'] {
 	display: inline-flex;
 }
 
-.links > span > li:nth-child(4),
-.links > span > li:nth-child(5) {
+.links > span:first-child > li:nth-child(4),
+.links > span:first-child > li:nth-child(5) {
 	display: none;
 }
 
