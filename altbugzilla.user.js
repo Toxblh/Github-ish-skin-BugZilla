@@ -14,7 +14,7 @@
 // @match          https://bugzilla.altlinux.ru/*
 // @run-at         document-start
 // @namespace      altbugzilla
-// @version        1.0.6
+// @version        1.1.0
 // @icon           https://bugzilla.altlinux.org/images/favicon.svg
 // @author         Toxblh
 // @homepageURL    https://github.com/Toxblh/Github-ish-skin-BugZilla
