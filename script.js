@@ -1,106 +1,108 @@
-// Select all elements that contain the "mailto:" email link
-let emailLinks = document.querySelectorAll('a.email[href^="mailto:"]');
 
-if (emailLinks.length) {
-    // Proceed as before if email links are found
-    emailLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        const email = linkHref.replace('mailto:', '').trim();
-        const emailHash = CryptoJS.MD5(email.toLowerCase()).toString();
-        const gravatarUrl = `https://www.gravatar.com/avatar/${emailHash}?s=80&d=identicon`;
-        const img = document.createElement('img');
-        img.src = gravatarUrl;
-        img.alt = 'Gravatar';
-        img.classList.add('bz_avatar');
-        link.parentElement.insertBefore(img, link);
-    });
-} else {
-    // No email links found, fetch data from the API
-    const bugIdElement = document.querySelector('input[name="id"]');
-    if (!bugIdElement) {
-        console.log('Bug ID not found on the page.');
+(function() {
+    // Select all elements that contain the "mailto:" email link
+    let emailLinks = document.querySelectorAll('a.email[href^="mailto:"]');
+    
+    if (emailLinks.length) {
+        // Proceed as before if email links are found
+        emailLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            const email = linkHref.replace('mailto:', '').trim();
+            const emailHash = CryptoJS.MD5(email.toLowerCase()).toString();
+            const gravatarUrl = `https://www.gravatar.com/avatar/${emailHash}?s=80&d=identicon`;
+            const img = document.createElement('img');
+            img.src = gravatarUrl;
+            img.alt = 'Gravatar';
+            img.classList.add('bz_avatar');
+            link.parentElement.insertBefore(img, link);
+        });
     } else {
-        const bugId = bugIdElement.value;
-
-        // Fetch the bug data and comment data
-        Promise.all([
-            fetch(`https://bugzilla.altlinux.org/rest/bug/${bugId}`).then(res => res.json()),
-            fetch(`https://bugzilla.altlinux.org/rest/bug/${bugId}/comment`).then(res => res.json())
-        ]).then(([bugData, commentData]) => {
-            const bug = bugData.bugs[0];
-
-            // Process assignee and reporter
-            const users = [];
-
-            users.push({
-                real_name: bug.assigned_to_detail.real_name,
-                email: bug.assigned_to_detail.email
+        // No email links found, fetch data from the API
+        const bugIdElement = document.querySelector('input[name="id"]');
+        if (!bugIdElement) {
+            console.log('Bug ID not found on the page.');
+        } else {
+            const bugId = bugIdElement.value;
+    
+            // Fetch the bug data and comment data
+            Promise.all([
+                fetch(`https://bugzilla.altlinux.org/rest/bug/${bugId}`).then(res => res.json()),
+                fetch(`https://bugzilla.altlinux.org/rest/bug/${bugId}/comment`).then(res => res.json())
+            ]).then(([bugData, commentData]) => {
+                const bug = bugData.bugs[0];
+    
+                // Process assignee and reporter
+                const users = [];
+    
+                users.push({
+                    real_name: bug.assigned_to_detail.real_name,
+                    email: bug.assigned_to_detail.email
+                });
+    
+                users.push({
+                    real_name: bug.creator_detail.real_name,
+                    email: bug.creator_detail.email
+                });
+                
+                users.push({
+                	real_name: bug.qa_contact_detail.real_name,
+                	email: bug.qa_contact_detail.email
+                })
+    
+                // Insert Gravatar for assignee and reporter
+                users.forEach(user => {
+                    insertGravatar(user.real_name, user.email);
+                });
+    
+                // Process commenters
+                const comments = commentData.bugs[bugId].comments;
+    
+                comments.forEach(comment => {
+                    const commentDiv = document.getElementById('c' + comment.count);
+                    if (commentDiv) {
+                        const userElement = commentDiv.querySelector('.fn');
+                        if (userElement) {
+                            const emailHash = CryptoJS.MD5(comment.creator.toLowerCase()).toString();
+                            const gravatarUrl = `https://www.gravatar.com/avatar/${emailHash}?s=80&d=identicon`;
+                            const img = document.createElement('img');
+                            img.src = gravatarUrl;
+                            img.alt = 'Gravatar';
+                            img.classList.add('bz_avatar');
+                            userElement.parentElement.insertBefore(img, userElement);
+                        }
+                    }
+                });
+            }).catch(error => {
+                console.error('Error fetching bug data:', error);
             });
-
-            users.push({
-                real_name: bug.creator_detail.real_name,
-                email: bug.creator_detail.email
-            });
-            
-            users.push({
-            	real_name: bug.qa_contact_detail.real_name,
-            	email: bug.qa_contact_detail.email
-            })
-
-            // Insert Gravatar for assignee and reporter
-            users.forEach(user => {
-                insertGravatar(user.real_name, user.email);
-            });
-
-            // Process commenters
-            const comments = commentData.bugs[bugId].comments;
-
-            comments.forEach(comment => {
-                const commentDiv = document.getElementById('c' + comment.count);
-                if (commentDiv) {
-                    const userElement = commentDiv.querySelector('.fn');
-                    if (userElement) {
-                        const emailHash = CryptoJS.MD5(comment.creator.toLowerCase()).toString();
-                        const gravatarUrl = `https://www.gravatar.com/avatar/${emailHash}?s=80&d=identicon`;
-                        const img = document.createElement('img');
-                        img.src = gravatarUrl;
-                        img.alt = 'Gravatar';
-                        img.classList.add('bz_avatar');
-                        userElement.parentElement.insertBefore(img, userElement);
+    
+            // Helper function to insert Gravatar
+            function insertGravatar(realName, email) {
+                const userElement = findUserElementByName(realName);
+                if (userElement) {
+                    const emailHash = CryptoJS.MD5(email.toLowerCase()).toString();
+                    const gravatarUrl = `https://www.gravatar.com/avatar/${emailHash}?s=80&d=identicon`;
+                    const img = document.createElement('img');
+                    img.src = gravatarUrl;
+                    img.alt = 'Gravatar';
+                    img.classList.add('bz_avatar');
+                    userElement.parentElement.insertBefore(img, userElement);
+                }
+            }
+    
+            // Helper function to find user element by real name
+            function findUserElementByName(realName) {
+                const nameElements = document.querySelectorAll('.fn');
+                for (let elem of nameElements) {
+                    if (elem.textContent.trim() === realName) {
+                        return elem;
                     }
                 }
-            });
-        }).catch(error => {
-            console.error('Error fetching bug data:', error);
-        });
-
-        // Helper function to insert Gravatar
-        function insertGravatar(realName, email) {
-            const userElement = findUserElementByName(realName);
-            if (userElement) {
-                const emailHash = CryptoJS.MD5(email.toLowerCase()).toString();
-                const gravatarUrl = `https://www.gravatar.com/avatar/${emailHash}?s=80&d=identicon`;
-                const img = document.createElement('img');
-                img.src = gravatarUrl;
-                img.alt = 'Gravatar';
-                img.classList.add('bz_avatar');
-                userElement.parentElement.insertBefore(img, userElement);
+                return null;
             }
-        }
-
-        // Helper function to find user element by real name
-        function findUserElementByName(realName) {
-            const nameElements = document.querySelectorAll('.fn');
-            for (let elem of nameElements) {
-                if (elem.textContent.trim() === realName) {
-                    return elem;
-                }
-            }
-            return null;
         }
     }
-}
-
+})();
 
 (function() {
     // Шаг 1: Найти таблицу с id "attachment_table"
