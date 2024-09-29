@@ -4,13 +4,15 @@
 // @description    Modernized visual update for Alt Bugzilla.
 // @description:ru Предоставляет обновлённый современный визуальный стиль для Alt Bugzilla.
 // @grant          GM_addStyle
-// @grant          GM_xmlhttpRequest
+// @grant          GM_getResourceText
 // @connect        raw.githubusercontent.com
 // @require        https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js
 // @require        https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/script.js
+// @resource css   https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/styles.css
 // @match          https://bugzilla.altlinux.org/*
 // @match          https://bugzilla.altlinux.com/*
 // @match          https://bugzilla.altlinux.ru/*
+// @run-at         document-start
 // @namespace      altbugzilla
 // @version        1.0.6
 // @icon           https://bugzilla.altlinux.org/images/favicon.svg
@@ -21,16 +23,4 @@
 // @supportURL     https://github.com/Toxblh/Github-ish-skin-BugZilla/issues
 // ==/UserScript==
 
-(function() {
-    'use strict';
-
-    // Загружаем и применяем CSS файл
-    GM_xmlhttpRequest({
-        method: "GET",
-        url: "https://raw.githubusercontent.com/Toxblh/Github-ish-skin-BugZilla/refs/heads/master/styles.css",
-        onload: function(response) {
-            GM_addStyle(response.responseText);
-        }
-    });
-
-})();
+GM_addStyle(GM_getResourceText("css"))
