@@ -1,5 +1,4 @@
-
-(function() {
+function abz_avatars() {
     // Select all elements that contain the "mailto:" email link
     let emailLinks = document.querySelectorAll('a.email[href^="mailto:"]');
     
@@ -102,9 +101,9 @@
             }
         }
     }
-})();
+}
 
-(function() {
+function abz_attacments() {
     // Шаг 1: Найти таблицу с id "attachment_table"
     var attachmentTable = document.getElementById('attachment_table');
     if (!attachmentTable) {
@@ -170,9 +169,9 @@
     });
 
     console.log('Обработка изображений завершена.');
-})();
+}
 
-(function() {
+function abz_time() {
     /**
      * Функция для преобразования абсолютной даты в относительное время на русском языке.
      * @param {Date} date - Абсолютная дата.
@@ -259,9 +258,9 @@
     });
 
     console.log('Преобразование дат завершено.');
-})();
+}
 
-(function() {
+function abz_list_issues() {
     // Функции для обработки даты
 
     /**
@@ -589,4 +588,11 @@
         return colors[severity.toLowerCase()] || '#d1d5da'; // По умолчанию серый
     }
 
-})();
+}
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    abz_avatars();
+    abz_time();
+    abz_attacments();
+    abz_list_issues();
+});
