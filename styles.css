@@ -1426,6 +1426,12 @@ form {
 	background-color: transparent;
 }
 
+.bz_comment_text span.quote {
+	padding-left: 1em;
+	color: var(--fgColor-muted, var(--color-fg-muted));
+    	border-left: .25em solid var(--borderColor-default, var(--color-border-default));
+}
+
 /* Additional modern enhancements */
 /* Use subtle shadows for depth */
 .box,
